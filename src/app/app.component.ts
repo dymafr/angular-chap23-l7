@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   @ViewChild("food", { static: true }) public el: MatSelectionList;
 
   ngOnInit() {
-    this.el.selectionChange.subscribe(val => console.log(val));
+    this.el.selectionChange.subscribe(val =>
+      console.log(this.el.selectedOptions.selected.map(e => e.value))
+    );
   }
 }
