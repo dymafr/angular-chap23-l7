@@ -1,10 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatSelectionList } from "@angular/material/list";
 
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  public ouverture: boolean = true;
+export class AppComponent implements OnInit {
+  @ViewChild("food", { static: true }) public el: MatSelectionList;
+
+  ngOnInit() {
+    this.el.selectionChange.subscribe(val => console.log(val));
+  }
 }
