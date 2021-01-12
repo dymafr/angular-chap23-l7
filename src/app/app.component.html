@@ -1,0 +1,39 @@
+<mat-sidenav-container>
+	<mat-sidenav mode="side" [opened]="ouverture">
+		Contenu de la sidenav
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		<p>
+			<mat-checkbox [(ngModel)]="ouverture">Ouvrir/Fermer</mat-checkbox>
+		</p>
+		<div class="container">
+			<div>
+				<button mat-button class="m-5">Basic</button>
+				<button mat-raised-button color="primary" class="m-5">Primary</button>
+				<button mat-stroked-button color="accent" class="m-5">Accent</button>
+				<button mat-flat-button color="warn" class="m-5">Warn</button>
+				<button mat-fab disabled class="m-5"><mat-icon>favorite</mat-icon></button>
+				<button mat-mini-fab color="warn" class="m-5"><mat-icon>filter_list</mat-icon></button>
+				<button mat-icon-button class="m-5"><mat-icon>open_in_new</mat-icon></button>
+			</div>
+			<div>
+				<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+				<mat-menu #menu="matMenu">
+					<button mat-menu-item [matMenuTriggerFor]="menu1">1</button>
+					<button mat-menu-item [matMenuTriggerFor]="menu2">2</button>
+				</mat-menu>
+
+				<mat-menu #menu1="matMenu">
+					<button mat-menu-item>A</button>
+					<button mat-menu-item>B</button>
+				</mat-menu>
+				<mat-menu #menu2="matMenu">
+					<button mat-menu-item>C</button>
+					<button mat-menu-item>D</button>
+				</mat-menu>
+			</div>
+		</div>
+	</mat-sidenav-content>
+
+</mat-sidenav-container>
